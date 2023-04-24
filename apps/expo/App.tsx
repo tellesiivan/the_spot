@@ -1,6 +1,7 @@
 import 'expo-dev-client'
 import React from 'react'
 import { NativeNavigation } from 'app/navigation/native'
+import { SafeAreaProvider } from 'react-native-safe-area-context'
 import { Provider } from 'app/provider'
 import { useFonts } from 'expo-font'
 
@@ -15,8 +16,10 @@ export default function App() {
   }
 
   return (
-    <Provider>
-      <NativeNavigation />
-    </Provider>
+    <SafeAreaProvider>
+      <Provider>
+        <NativeNavigation />
+      </Provider>
+    </SafeAreaProvider>
   )
 }

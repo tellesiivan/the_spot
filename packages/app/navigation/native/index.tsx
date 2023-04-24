@@ -12,7 +12,11 @@ const Stack = createNativeStackNavigator<{
 
 export function NativeNavigation() {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
       <Stack.Screen
         name="home"
         component={HomeScreen}
@@ -24,6 +28,7 @@ export function NativeNavigation() {
         name="user-detail"
         component={UserDetailScreen}
         options={{
+          presentation: 'modal',
           title: 'User',
         }}
       />
